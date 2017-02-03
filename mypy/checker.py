@@ -654,7 +654,7 @@ class TypeChecker(NodeVisitor[Type]):
                     if self.is_trivial_body(defn.body):
                         pass
                     else:
-                        self.msg.note(messages.MISSING_RETURN_STATEMENT, defn)
+                        self.msg.fail(messages.MISSING_RETURN_STATEMENT, defn)
 
             self.return_types.pop()
 
